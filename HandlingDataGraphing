@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb 17 17:03:11 2017
+
+@author: Abhishek1Mahesh
+"""
+
+import datetime as dt
+import matplotlib.pyplot as plt
+from matplotlib import style
+import pandas as pd
+import pandas_datareader.data as web
+
+#create a csv file
+style.use('ggplot')
+start = dt.datetime(2000, 1,1)
+end = dt.datetime(2016,12,31)
+
+#dataFrame = web.DataReader('TSLA', 'yahoo', start, end)
+
+#dataFrame.to_csv('tsla.csv')
+
+#read a csv file
+
+dataFrame = pd.read_csv('tsla.csv', parse_dates = True, index_col=0)
+
+#print(dataFrame.head())
+dataFrame['Adj Close'].plot()
+plt.show()
+
+print(dataFrame[['Open','Close', 'Adj Close']].head())
