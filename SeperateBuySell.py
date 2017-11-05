@@ -134,3 +134,5 @@ def bulk_classify(current_price, previous_price, current_volume, sdev_price):
     bvpin = (v_buy - v_sell) / volume  
     
     return v_buy, v_sell, bvpin
+
+#Collaborated on with the Quantopian Community
